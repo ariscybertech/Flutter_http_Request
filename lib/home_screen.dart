@@ -31,8 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (BuildContext context, int index) {
                 return Card(
                   child: ExpansionTile(
-                    title: Text(model[index].title),
-                    children: [Text(model[index].body)],
+                    title: Text(model[index].channel_name),
+                    children: [Text(model[index].channel_description)],
                   ),
                 );
               },
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> getData() async {
-    Uri url = Uri.https('jsonplaceholder.typicode.com', '/posts');
+    Uri url = Uri.https('py.dwed.biz', '/v1.0/api/streaming/movie_tv/');
     http.Response res = await http.get(url);
     print(res.body);
     List<dynamic> body = cnv.jsonDecode(res.body);

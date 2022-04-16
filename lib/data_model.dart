@@ -1,24 +1,24 @@
 class DataModel {
-  int userId;
-  int id;
-  String title;
-  String body;
+  int category;
+  int live_watchers;
+  String channel_name;
+  String channel_description;
 
-  DataModel({this.userId, this.id, this.title, this.body});
+  DataModel({this.category, this.live_watchers, this.channel_name, this.channel_description});
 
   DataModel.fromJson(Map<String, dynamic> json) {
-    userId = json['userId'];
-    id = json['id'];
-    title = json['title'];
-    body = json['body'];
+    category = json['category'];
+    live_watchers = json['live_watchers'];
+    channel_name = json['channel_name'];
+    channel_description = json['channel_description'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['userId'] = this.userId;
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['body'] = this.body;
+    data['category'] = this.category;
+    data['live_watchers'] = this.live_watchers;
+    data['channel_name'] = this.channel_name;
+    data['channel_description'] = this.channel_description;
     return data;
   }
 }
